@@ -1,0 +1,75 @@
+{
+    "versionLabel": "1.0",
+    "uuid": "7d04cb24-4988-42b8-bba0-1535baf29043",
+    "appKeys": {},
+    "longName": "Metro Watch",
+    "versionCode": 1,
+    "capabilities": [
+        ""
+    ],
+    "shortName": "MetroWatch",
+    "companyName": "Marc Ferrandiz Borras",
+    "watchapp": {
+        "watchface": true
+    },
+    "resources": {
+        "media": [
+            {
+                "type": "png",
+                "name": "IMAGE_N9",
+                "file": "images/n9.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_N8",
+                "file": "images/n8.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_N7",
+                "file": "images/n7.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_N6",
+                "file": "images/n6.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_N5",
+                "file": "images/n5.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_N4",
+                "file": "images/n4.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_N3",
+                "file": "images/n3.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_N2",
+                "file": "images/n2.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_N1",
+                "file": "images/n1.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_N0",
+                "file": "images/n0.png"
+            },
+            {
+                "menuIcon": true,
+                "type": "png",
+                "name": "MENU_ICON",
+                "file": "images/menu_icon.png"
+            }
+        ]
+    }
+}
