@@ -67,8 +67,6 @@ void load_image_into_slot(int slot_number, int digit_value) {
 	
 	//update state of the slot
   	image_slot_state[slot_number] = digit_value;
-	//create the bitmap
-	bitmap[digit_value]=gbitmap_create_with_resource(IMAGE_RESOURCE_IDS[digit_value]);
 	//create the layer
 	bitmap_layer[slot_number]= bitmap_layer_create(GRect(position[slot_number].x,position[slot_number].y,WIDTH,HEIGHT));
 	//set the bitmap on the layer
@@ -85,8 +83,6 @@ void unload_image_from_slot(int slot_number, int digit_value) {
    */
 
   if (image_slot_state[slot_number] != EMPTY_SLOT) {
-	// destroy bitmap
-	gbitmap_destroy(bitmap[digit_value]);  
 	layer_remove_from_parent(bitmap_layer_get_layer(bitmap_layer[slot_number]));
 	 //destroy layer
 	bitmap_layer_destroy(bitmap_layer[slot_number]);
@@ -168,6 +164,11 @@ void handle_init(void) {
 	temp = time(NULL);
 	tick_time = localtime(&temp);// upload time on start watch
 
+	for (int bitmap_nr = 0; bitmap_nr < NUMBER_OF_IMAGES; bitmap_nr++) {
+		//create the bitmap
+		bitmap[bitmap_nr]=gbitmap_create_with_resource(IMAGE_RESOURCE_IDS[bitmap_nr]);
+	}
+
 	//Manually call the tick handler when the window is loading to put tick_time
 	// for default
 	tick_handler(tick_time, MINUTE_UNIT);
@@ -187,10 +188,13 @@ void handle_deinit(void) {
 	for (int i = 0; i < TOTAL_SLOTS; i++) {
 		for(int j = 0;j<NUMBER_OF_IMAGES;j++){
 			unload_image_from_slot(i,j);
-			
 		}
     	
  	}
+	for(int j = 0;j<NUMBER_OF_IMAGES;j++){
+		// destroy bitmap
+		gbitmap_destroy(bitmap[j]);
+	}
 	// Destroy the window
 	window_destroy(window);
 }
